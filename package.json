@@ -1,10 +1,14 @@
 {
+  "name": "crypte_u_data",
+  "version": "1.0.0",
+  "description": "Crypte and decript your data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.ts",
+    "prettier": "prettier --write \"**/*.ts\""
+  },
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "crypto": "^1.0.1",
-    "joi": "^17.9.2",
-    "moment": "^2.29.4",
-    "moment-timezone": "^0.5.41",
-    "validator.js": "^2.0.4"
+    "crypto": "^1.0.1"
   }
 }
