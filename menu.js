@@ -36,9 +36,7 @@ function runMenu() {
   rl.question('Enter your choice: ', (choice) => {
     switch (choice) {
       case '1':
-        console.log('. . .');
         unhashSaveData(cryptedFileData, secretToken);
-        console.log('. . .');
         runMenu();
         break;
       case '2':

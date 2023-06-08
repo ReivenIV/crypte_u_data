@@ -31,21 +31,21 @@ function unhashWithSecret(hashedData, secret) {
   return decrypted;
 }
 
-async function unhashSaveData(cryptedFileData, secretToken) {
+function unhashSaveData(cryptedFileData, secretToken) {
   try {
     const unHashedData = unhashWithSecret(cryptedFileData, secretToken);
     console.log('☁️..Data saved successfully..☁️');
-    await fs.writeFileSync(virginFilePath, unHashedData, 'utf8');
+    fs.writeFileSync(virginFilePath, unHashedData, 'utf8');
   } catch (err) {
     console.error(err);
   }
 }
 
-async function hashSaveData(virginFileData, secretToken) {
+function hashSaveData(virginFileData, secretToken) {
   try {
     const hashedData = hashDataWithSecret(virginFileData, secretToken);
     console.log('☁️..Data saved successfully..☁️');
-    await fs.writeFileSync(cryptedFilePath, hashedData, 'utf8');
+   fs.writeFileSync(cryptedFilePath, hashedData, 'utf8');
   } catch (err) {
     console.error(err);
   }
