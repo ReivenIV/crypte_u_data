@@ -36,23 +36,27 @@ function runMenu() {
   rl.question('Enter your choice: ', (choice) => {
     switch (choice) {
       case '1':
-        unhashSaveData(cryptedFileData, secretToken)
-          .then(() => runMenu())
-          .catch((err) => {
-            console.error(err);
-            runMenu();
-          });
+        console.log('. . .');
+        unhashSaveData(cryptedFileData, secretToken);
+        console.log('. . .');
+        runMenu();
         break;
       case '2':
+        console.log('. . .');
         hashSaveData(virginFileData, secretToken);
+        console.log('. . .');
         runMenu();
         break;
       case '3':
+        console.log('. . .');
         burnCryptedData();
+        console.log('. . .');
         runMenu();
         break;
       case '4':
+        console.log('. . .');
         burnvirginFileData();
+        console.log('. . .');
         runMenu();
         break;
       case '5':

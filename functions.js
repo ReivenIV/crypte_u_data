@@ -34,18 +34,18 @@ function unhashWithSecret(hashedData, secret) {
 async function unhashSaveData(cryptedFileData, secretToken) {
   try {
     const unHashedData = unhashWithSecret(cryptedFileData, secretToken);
-    await fs.writeFileSync(virginFilePath, unHashedData, 'utf8');
     console.log('☁️..Data saved successfully..☁️');
+    await fs.writeFileSync(virginFilePath, unHashedData, 'utf8');
   } catch (err) {
     console.error(err);
   }
 }
 
-function hashSaveData(virginFileData, secretToken) {
+async function hashSaveData(virginFileData, secretToken) {
   try {
     const hashedData = hashDataWithSecret(virginFileData, secretToken);
-    fs.writeFileSync(cryptedFilePath, hashedData, 'utf8');
     console.log('☁️..Data saved successfully..☁️');
+    await fs.writeFileSync(cryptedFilePath, hashedData, 'utf8');
   } catch (err) {
     console.error(err);
   }
