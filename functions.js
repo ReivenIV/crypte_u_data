@@ -3,10 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const virginFilePath = path.join(__dirname, 'payloads', 'virgin_data.txt');
-//const virginFileData = fs.readFileSync(virginFilePath, 'utf8');
 const cryptedFilePath = path.join(__dirname, 'payloads', 'crypted_data.txt');
-//const cryptedFileData = fs.readFileSync(cryptedFilePath, 'utf8');
-//const secretToken = process.env.SECRET_TOKEN;
 
 function hashDataWithSecret(data, secret) {
   const algorithm = 'aes-256-cbc';
@@ -38,7 +35,7 @@ async function unhashSaveData(cryptedFileData, secretToken) {
   try {
     const unHashedData = unhashWithSecret(cryptedFileData, secretToken);
     await fs.writeFileSync(virginFilePath, unHashedData, 'utf8');
-    console.log('☁️ Data saved successfully.☁️');
+    console.log('☁️..Data saved successfully..☁️');
   } catch (err) {
     console.error(err);
   }
@@ -48,7 +45,7 @@ function hashSaveData(virginFileData, secretToken) {
   try {
     const hashedData = hashDataWithSecret(virginFileData, secretToken);
     fs.writeFileSync(cryptedFilePath, hashedData, 'utf8');
-    console.log('☁️ Data saved successfully.☁️');
+    console.log('☁️..Data saved successfully..☁️');
   } catch (err) {
     console.error(err);
   }
