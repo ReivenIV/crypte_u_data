@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/server.ts",
+    "dev": "nodemon ./crypto.js",
     "prettier": "prettier --write \"**/*.js\""
   },
   "dependencies": {
     "crypto": "^1.0.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "eslint": "^8.42.0",
