@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "crypto": "^1.0.1",
+    "joi": "^17.9.2",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.41",
+    "validator.js": "^2.0.4"
+  }
+}
